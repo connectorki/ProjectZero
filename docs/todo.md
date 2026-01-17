@@ -1,7 +1,7 @@
 # Todo List - Project Zero
 
 ## Phase 1: Foundation (Setup & CLI)
-- [ ] Initialize Cargo project (`cargo init`)
+- [x] Initialize Cargo project (`cargo init`)
 - [ ] Add dependencies to `Cargo.toml` (`clap`, `anyhow`)
 - [ ] Implement basic CLI structure in `src/args.rs`
 - [ ] Set up error handling in `src/main.rs`
