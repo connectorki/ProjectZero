@@ -22,5 +22,9 @@ pub enum Commands {
         /// Initialize a Git repository in the project.
         #[arg(long, short)]
         git: bool,
+
+        /// Generate documentation starter files in the docs folder.
+        #[arg(long, short)]
+        docs: bool,
     },
 }

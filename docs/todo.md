@@ -17,10 +17,14 @@
 - [x] Add optional `--git` flag to the CLI
 
 ## Phase 4: Documentation & Polish
-- [ ] Implement `--docs` flag to generate documentation folder
-- [ ] Add tests for scaffolding logic
-- [ ] Improve error messages and user feedback
+- [x] Implement `--docs` flag to generate documentation folder
+- [x] Add tests for scaffolding logic
+- [x] Improve error messages and user feedback
 
 ## Phase 5: CI/CD & Release
-- [ ] Set up GitHub Actions workflow for Rust
-- [ ] Prepare first binary release
+- [ ] Set up GitHub Actions workflow (`.github/workflows/ci.yml`)
+    - [ ] Run `cargo check`
+    - [ ] Run `cargo test`
+    - [ ] Run `cargo clippy`
+    - [ ] Run `cargo fmt -- --check`
+- [ ] Prepare first binary release (manual verification)

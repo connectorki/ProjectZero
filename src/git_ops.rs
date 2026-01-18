@@ -20,11 +20,19 @@ pub fn init_repository(path: &Path) -> Result<()> {
         .arg("init")
         .current_dir(path)
         .output()
-        .context("Failed to execute 'git init'. Is Git installed?")?;
+        .with_context(|| {
+            "Failed to execute 'git init'. Please ensure Git is installed and available in your PATH. \
+            You can install Git from https://git-scm.com/downloads"
+        })?;
 
     if !output.status.success() {
         let stderr = String::from_utf8_lossy(&output.stderr);
-        anyhow::bail!("Git init failed: {}", stderr.trim());
+        anyhow::bail!(
+            "Git initialization failed in '{}': {}. \
+            Please check that the directory exists and you have write permissions.",
+            path.display(),
+            stderr.trim()
+        );
     }
 
     Ok(())
