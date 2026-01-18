@@ -8,9 +8,9 @@
 - [x] Create missing module files (`src/scaffold.rs`, `src/git_ops.rs`)
 
 ## Phase 2: Core Logic (Scaffolding)
-- [ ] Implement folder creation logic in `src/scaffold.rs`
-- [ ] Implement file creation logic (README, etc.)
-- [ ] Add support for custom project names
+- [x] Implement folder creation logic in `src/scaffold.rs`
+- [x] Implement file creation logic (README, etc.)
+- [x] Add support for custom project names
 
 ## Phase 3: Git Integration
 - [ ] Implement `git init` wrapper in `src/git_ops.rs`

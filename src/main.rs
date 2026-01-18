@@ -13,7 +13,8 @@ fn main() -> Result<()> {
     match cli.command {
         Commands::Init { name } => {
             println!("Initializing project: {}", name);
-            // TODO: Implement scaffolding logic
+            scaffold::create_project(&name)?;
+            println!("Project '{}' created successfully!", name);
         }
     }
 
