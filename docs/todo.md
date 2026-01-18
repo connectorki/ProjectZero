@@ -2,9 +2,10 @@
 
 ## Phase 1: Foundation (Setup & CLI)
 - [x] Initialize Cargo project (`cargo init`)
-- [ ] Add dependencies to `Cargo.toml` (`clap`, `anyhow`)
-- [ ] Implement basic CLI structure in `src/args.rs`
-- [ ] Set up error handling in `src/main.rs`
+- [x] Add dependencies to `Cargo.toml` (`clap`, `anyhow`)
+- [x] Implement basic CLI structure in `src/args.rs`
+- [x] Set up error handling in `src/main.rs`
+- [x] Create missing module files (`src/scaffold.rs`, `src/git_ops.rs`)
 
 ## Phase 2: Core Logic (Scaffolding)
 - [ ] Implement folder creation logic in `src/scaffold.rs`
