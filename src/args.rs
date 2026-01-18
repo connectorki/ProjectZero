@@ -18,5 +18,9 @@ pub enum Commands {
     Init {
         /// The name of the project to create.
         name: String,
+
+        /// Initialize a Git repository in the project.
+        #[arg(long, short)]
+        git: bool,
     },
 }

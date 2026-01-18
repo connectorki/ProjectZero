@@ -13,8 +13,8 @@
 - [x] Add support for custom project names
 
 ## Phase 3: Git Integration
-- [ ] Implement `git init` wrapper in `src/git_ops.rs`
-- [ ] Add optional `--git` flag to the CLI
+- [x] Implement `git init` wrapper in `src/git_ops.rs`
+- [x] Add optional `--git` flag to the CLI
 
 ## Phase 4: Documentation & Polish
 - [ ] Implement `--docs` flag to generate documentation folder

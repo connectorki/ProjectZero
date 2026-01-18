@@ -11,9 +11,16 @@ fn main() -> Result<()> {
     let cli = Cli::parse();
 
     match cli.command {
-        Commands::Init { name } => {
+        Commands::Init { name, git } => {
             println!("Initializing project: {}", name);
             scaffold::create_project(&name)?;
+
+            if git {
+                println!("Initializing Git repository...");
+                git_ops::init_repository(std::path::Path::new(&name))?;
+                println!("Git repository initialized.");
+            }
+
             println!("Project '{}' created successfully!", name);
         }
     }

@@ -92,3 +92,31 @@ Proceed with creating the missing modules and then starting Phase 2 (Scaffolding
 
 ### Approved for Implementation
 **Phase 2 is COMPLETE**. Proceed to **Phase 3: Git Integration**.
+
+## [2026-01-18] Phase 3: Git Integration Review
+
+### Status Check
+*   **CLI:** ✅ `--git` flag added to `src/args.rs`.
+*   **Logic:** ✅ `git_ops::init_repository` implemented correctly.
+*   **Integration:** ✅ `src/main.rs` handles the flag and calls the logic.
+*   **Docs:** ✅ `todo.md` updated.
+
+### Code Analysis (`src/git_ops.rs`)
+*   **Correctness:** Uses `Command::new("git").arg("init")`.
+*   **Safety:** Checks `.status.success()` and returns detailed stderr if it fails.
+*   **Context:** Sets `.current_dir(path)` to ensure init happens *inside* the new project folder. Essential!
+
+### Code Analysis (`src/main.rs`)
+*   **Flow:** Checks `if git` before calling `init_repository`.
+*   **Path Handling:** Creates a `Path` from the project name string correctly.
+
+### Recommendations / Next Steps
+1.  **Phase 4 Start**: Documentation & Polish.
+2.  **Note:** The original plan mentioned a `--docs` flag, but our `create_project` currently *always* creates a `docs/` folder.
+3.  **Refinement:** We should decide if `docs/` is optional. Given the "Opinionated" philosophy in `context.md`, it says "docs are always included".
+    *   *Correction:* The todo says "Implement --docs flag". This contradicts the philosophy slightly if it implies docs are opt-in. Let's interpret it as: "Generate specific documentation files INSIDE the docs folder" (like `airules.md` template).
+    *   *Alternative:* Just ensure the standard docs are populated.
+4.  **Action:** Let's focus on **Tests**. Add a simple integration test or unit test for `scaffold.rs`.
+
+### Approved for Implementation
+**Phase 3 is COMPLETE**. Proceed to **Phase 4: Documentation & Polish**.
